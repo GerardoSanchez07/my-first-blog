@@ -18,11 +18,13 @@
 		</div>
 	{% endfor %}
 
-	<div>
-		<p>published: 14.06.2014, 12:14</p>
-		<h2><a href="">My Second Post</a></h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, officiis possimus. Vel, ab fuga molestias ullam natus corrupti eum aliquid officia. Tempora rem delectus recusandae labore corrupti sunt ipsum autem.</p>
-	</div>
-	
+	{% for post in posts %}	
+		<div>
+			<p>published: {{ post.published_date }}</p>
+			<h2><a href="">{{ post.title }}</a></h2>
+			<p>{{ post.text|linebreaksbr }}</p>
+		</div>
+	{% endfor %}
+		
 </body>
 </html>
