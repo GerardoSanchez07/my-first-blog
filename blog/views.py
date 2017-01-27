@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
-
+from django.views.decorators.csrf import csrf_exempt
+from django.core.context_processors import csrf
 # Create your views here.
 def post_list(request):
 
@@ -9,14 +10,15 @@ def post_list(request):
 	return render(request, 'blog/post_list.html', {'posts': posts})
 
 
-@csrf_exempt
-def androidLogin(request):
-	if request.method=='POST':
-		print "begin"
-        print request.body
-        json_data  = json.loads(request.body())
-        print json_data['name']
-        print json_data['id']
-        username = json_data['name']
-        password = json_data['id']
-        email = json_data['email']
+def djangoData(request):
+    posts = "HOLAa"
+    print posts
+
+    if request.method=="POST":
+        usern = request.POST['user']
+        password = request.POST['password']
+        print usern
+        print password
+
+    return render(request, 'blog/templete.html', {'posts': posts})
+    
