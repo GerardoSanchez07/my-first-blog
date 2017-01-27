@@ -12,7 +12,7 @@ def post_list(request):
 
 def djangoData(request):
     posts = "HOLAa"
-    print posts
+    print (posts)
 
     if request.method=="POST":
         usern = request.POST['user']
