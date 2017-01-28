@@ -12,9 +12,10 @@ def post_list(request):
 
 def djangoData(request):
     posts = "HOLAa"
-    print (posts)
-
+    
+    print 'RECEIVED REQUEST: ' + request.method
     if request.method=="POST":
+        print (posts)
         usern = request.POST['user']
         password = request.POST['password']
         print (usern)
