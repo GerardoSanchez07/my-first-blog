@@ -13,14 +13,14 @@ def post_list(request):
 def djangoData(request):
     
     
-    print ('RECEIVED REQUEST: ' + request.method)
-    if request.method=="POST":
-        posts = "HOLAa"
-        print (posts)
-        usern = request.POST['user']
-        password = request.POST['password']
-        print (usern)
-        print (password)
+   # print ('RECEIVED REQUEST: ' + request.method)
+   # if request.method=="POST":
+    #    posts = "HOLAa"
+     #   print (posts)
+      #  usern = request.POST['user']
+       # password = request.POST['password']
+       # print (usern)
+       # print (password)
 
-    return render(request, 'blog/templete.html', {'posts': posts})
+    #return render(request, 'blog/templete.html', {'posts': posts})
     
