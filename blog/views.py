@@ -16,8 +16,8 @@ def djangoData(request):
 
     if request.method=="POST":
 
-        usern = request.POST['fname']
-        password = request.POST['pass']
+        usern = request.POST['Name']
+        password = request.POST['Pass']
         print (usern)
     return render(request, 'blog/templete.html', {'posts': posts})
     
