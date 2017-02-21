@@ -10,8 +10,9 @@ def post_list(request):
 
     if request.method=="POST":
         usern = request.POST['Name']
+
         password = request.POST['Pass']
-        print (usern)
+    print (usern)
 
 	return render(request, 'blog/post_list.html', {'posts': posts})
 
