@@ -13,7 +13,7 @@ def post_list(request):
 def djangoData(request):
     
     
-    print 'RECEIVED REQUEST: ' + request.method
+    print ('RECEIVED REQUEST: ' + request.method)
     if request.method=="POST":
         posts = "HOLAa"
         print (posts)
