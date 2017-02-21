@@ -10,5 +10,11 @@ def post_list(request):
 	return render(request, 'blog/post_list.html', {'posts': posts})
 
 
+def djangoData(request):
+    posts = "HOLAa..."
+    print (posts)
 
+
+        
+    return render(request, 'blog/templete.html', {'posts': posts})
     
