@@ -15,6 +15,8 @@ def djangoData(request):
     print (posts)
 
 
-        
+     
+    response = requests.get('http://gerardosanchez007.pythonanywhere.com')
+    print response.status_code   
     return render(request, 'blog/templete.html', {'posts': posts})
     
