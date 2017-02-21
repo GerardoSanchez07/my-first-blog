@@ -10,7 +10,7 @@ def post_list(request):
 	return render(request, 'blog/post_list.html', {'posts': posts})
 
 
-def djangoData(request):
+#def djangoData(request):
     
     
    # print ('RECEIVED REQUEST: ' + request.method)
