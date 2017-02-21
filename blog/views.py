@@ -9,14 +9,15 @@ def post_list(request):
 	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 	return render(request, 'blog/post_list.html', {'posts': posts})
 
-
+@csrf_exempt
 def djangoData(request):
     posts = "HOLAa..."
     print (posts)
 
+    if request.method=="POST":
 
-     
-    response = requests.get('http://gerardosanchez007.pythonanywhere.com')
-    print (response.status_code)
+        usern = request.POST['user']
+        password = request.POST['password']
+        print (usern)
     return render(request, 'blog/templete.html', {'posts': posts})
     
