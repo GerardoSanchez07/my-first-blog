@@ -18,7 +18,7 @@ def post_list(request):
         print ('RECEIVED REQUEST: ' + request.method)
 
     if request.method == 'POST':
-        print 'Hello'
+        print ('Hello')
 
 
     ctx = {'use': use, 'pts': pts, 'posts':posts, 'usern': usern}
