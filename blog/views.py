@@ -8,20 +8,18 @@ from django.core.context_processors import csrf
 # Create your views here.
 @csrf_exempt
 def post_list(request):
-    pts = "HOLAa..."
+    pts = "HI..."
     use = "gerardo"
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    
-    usern = ""
-    password = ""
-    def buttonExample(request):
-        print ('RECEIVED REQUEST: ' + request.method)
+    print ('Hello')
+
+    print ('RECEIVED REQUEST: ' + request.method)
 
     if request.method == 'POST':
-        print ('Hello')
+        print ('Hello post')
 
 
-    ctx = {'use': use, 'pts': pts, 'posts':posts, 'usern': usern}
+    ctx = {'use': use, 'pts': pts, 'posts':posts }
     return render_to_response('blog/post_list.html', ctx, context_instance = RequestContext(request))
 
 
