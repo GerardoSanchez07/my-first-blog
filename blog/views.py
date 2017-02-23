@@ -11,9 +11,15 @@ def post_list(request):
     pts = "HOLAa..."
     use = "gerardo"
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    if request.method=="POST":
-        usern = request.POST['Name']
-        password = request.POST['Pass']
+    
+    usern = ""
+    password = ""
+    def buttonExample(request):
+        print 'RECEIVED REQUEST: ' + request.method
+
+    if request.method == 'POST':
+        print 'Hello'
+    
 
     ctx = {'use': use, 'pts': pts, 'posts':posts, 'usern': usern}
     return render_to_response('blog/post_list.html', ctx, context_instance = RequestContext(request))
