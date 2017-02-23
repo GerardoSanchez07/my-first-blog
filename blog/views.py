@@ -17,8 +17,8 @@ def post_list(request):
 
     if request.method == 'POST':
         use = "POST REQUEST"
-        json = request.POST['se']
-        
+        name = request.POST['name']
+        country = request.POST['country']
 
     use = "no request"
     ctx = {'use': use, 'pts': pts, 'posts':posts }
