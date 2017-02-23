@@ -9,7 +9,7 @@ from django.core.context_processors import csrf
 @csrf_exempt
 def post_list(request):
     pts = "HI..."
-    use = "gerardo"
+    use = ""
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     print ('Hello')
 
@@ -18,7 +18,7 @@ def post_list(request):
     if request.method == 'POST':
         use = "POST REQUEST"
 
-
+    use = "no request"
     ctx = {'use': use, 'pts': pts, 'posts':posts }
     return render_to_response('blog/post_list.html', ctx, context_instance = RequestContext(request))
 
