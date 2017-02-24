@@ -11,15 +11,19 @@ def post_list(request):
     pts = "HI..."
     use = ""
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    print ('Hello')
-
-    print ('RECEIVED REQUEST: ' + request.method)
-
+    
     if request.method == 'POST':
-        received_json_data=json.loads(request.POST['json'])
-       
+        json_data = json.loads(request.body) # request.raw_post_data w/ Django < 1.4
 
-    use = "no request"
+        try:
+            data = json_data['json']
+
+        except KeyError:
+            HttpResponseServerError("Malformed data!")
+        HttpResponse("Got json data")
+    
+
+    
     ctx = {'use': use, 'pts': pts, 'posts':posts }
     return render_to_response('blog/post_list.html', ctx, context_instance = RequestContext(request))
 
