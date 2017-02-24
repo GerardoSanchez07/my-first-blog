@@ -16,9 +16,8 @@ def post_list(request):
     print ('RECEIVED REQUEST: ' + request.method)
 
     if request.method == 'POST':
-        use = "POST REQUEST"
-        name = request.POST['name']
-        country = request.POST['country']
+        received_json_data=json.loads(request.POST['json'])
+       
 
     use = "no request"
     ctx = {'use': use, 'pts': pts, 'posts':posts }
