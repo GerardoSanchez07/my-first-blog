@@ -17,7 +17,7 @@ def post_list(request):
 
     if request.method == 'POST':
         use = "POST REQUEST"
-        name = request.body['name']
+        name = request.POST['name']
         country = request.POST['country']
 
     use = "no request"
