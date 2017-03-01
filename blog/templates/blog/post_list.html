@@ -22,13 +22,13 @@
 	<div class="content container">
         <div class="row">
             <div class="col-md-8">
-				<h2>{{ data }}</h2>
+				
 				{% for post in posts %}
 					<div class="post">
 						<p>published: {{ post.published_date }}</p>
 						<h1><a href="">{{ post.title}}</a></h1>
 						<p>{{ post.text|linebreaksbr }}</p>
-						
+						<h2>{{ received_json_data }}</h2>
 						<h2>{{ use }}</h2>
 						
 					</div>

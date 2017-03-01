@@ -18,6 +18,22 @@ class Post(models.Model): #Define nuestro Modelo
 		return self.title
 
 
+class Plublish(models.Model):
+	namep  = models.CharField(max_length=30)
+	agep   = models.CharField(max_length=10)
+	valuep = models.BooleanField(default=False)
+	nump   = models.IntegerField(default=0)
+	
+
+	def __str__(self):
+		return ' '.join([
+			self.namep,
+			self.agep,
+			self.valuep,
+			self.nump,
+		])
+		
+
 
 
 
